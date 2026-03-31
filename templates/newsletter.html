@@ -1,0 +1,83 @@
+<table width="100%" bgcolor="#f4f4f4" cellpadding="0" cellspacing="0" border="0">
+  <tr>
+    <td align="center">
+      <table width="600" bgcolor="#ffffff" cellpadding="0" cellspacing="0" border="0" style="margin: 20px auto; border-collapse: collapse;">
+        <!-- Header Bar -->
+        <tr>
+          <td bgcolor="#FF7A00" align="center" style="padding: 12px 0; font-weight: bold; font-size: 18px; color: #000000; text-transform: uppercase; font-family: 'Arial Black', Impact, sans-serif;">
+            SOCIAL BRAIN
+          </td>
+        </tr>
+        <!-- Title -->
+        <tr>
+          <td align="center" style="padding: 30px 20px 10px; text-align: center;">
+            <div style="font-size: 18px; font-weight: bold; text-transform: uppercase; font-family: 'Arial Black', Impact, sans-serif;">What's</div>
+            <div style="font-size: 64px; font-weight: bold; text-transform: uppercase; line-height: 1; font-family: 'Arial Black', Impact, sans-serif;">Trending</div>
+          </td>
+        </tr>
+        <!-- GIF -->
+        <tr>
+          <td align="center" style="padding: 20px 0;">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnQ5MXl0ZGN6bXYzemd1cnZuZjJtNWF2NHFmb3pxN2Z6a3dwb3Q5OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/IwTWTsUzmIicM/giphy.gif" alt="Trending GIF" style="width: 100%; max-width: 560px; display: block; margin: 0 auto;" />
+          </td>
+        </tr>
+        <tr><td style="height: 20px;"></td></tr>
+        <!-- Intro -->
+        <tr>
+          <td align="center" style="padding: 0 80px 30px; font-size: 16px; line-height: 1.6; color: #000000; font-family: 'Courier New', Courier, monospace;">
+            {{ intro }}
+          </td>
+        </tr>
+        <tr><td style="height: 20px;"></td></tr>
+        <!-- Hero Badge -->
+        <tr>
+          <td align="center">
+            <div style="background-color: #FF7A00; color: #ffffff; font-weight: bold; padding: 10px 25px; border-radius: 20px; display: inline-block; font-size: 14px; margin-bottom: 10px; font-family: 'Arial Black', Impact, sans-serif;">
+              OUR FAVE
+            </div>
+          </td>
+        </tr>
+        <!-- Hero Trend -->
+        <tr>
+          <td align="center" style="padding: 10px 40px 40px;">
+            <div style="font-weight: bold; font-size: 16px; margin-bottom: 8px; font-family: 'Arial Black', Impact, sans-serif;">
+              &#x1F525; {{ hero_trend_name }} &#x1F525;
+            </div>
+            <div style="font-size: 14px; line-height: 1.6; color: #000000; font-family: 'Courier New', Courier, monospace;">
+              {{ hero_trend_description }}
+            </div>
+          </td>
+        </tr>
+        <!-- Trend Grid -->
+        <tr>
+          <td style="padding: 10px 20px 30px;">
+            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+              {% for i in range(0, trend_grid|length, 2) %}
+              <tr>
+                <td valign="top" width="50%" style="padding: 10px; border: 1px solid #cccccc; text-align: center;">
+                  <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px; font-family: 'Arial Black', Impact, sans-serif;">
+                    {{ trend_grid[i].name }}
+                  </div>
+                  <div style="font-size: 13px; line-height: 1.5; font-family: 'Courier New', Courier, monospace;">
+                    {{ trend_grid[i].description }}
+                  </div>
+                </td>
+                {% if i + 1 < trend_grid|length %}
+                <td valign="top" width="50%" style="padding: 10px; border: 1px solid #cccccc; text-align: center;">
+                  <div style="font-weight: bold; font-size: 14px; margin-bottom: 5px; font-family: 'Arial Black', Impact, sans-serif;">
+                    {{ trend_grid[i + 1].name }}
+                  </div>
+                  <div style="font-size: 13px; line-height: 1.5; font-family: 'Courier New', Courier, monospace;">
+                    {{ trend_grid[i + 1].description }}
+                  </div>
+                </td>
+                {% endif %}
+              </tr>
+              {% endfor %}
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

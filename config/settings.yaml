@@ -1,0 +1,11 @@
+airtable:
+  base_id: "appM7UYZrU6isJwnf"
+  table_name: "social trends"
+  max_records: 10
+
+anthropic:
+  curator_model: "claude-sonnet-4-6"
+  writer_model: "claude-sonnet-4-6"
+
+output:
+  directory: "output"
